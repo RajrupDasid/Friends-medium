@@ -158,9 +158,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_project'),
 ]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),'static_cdn','static_root')#os.path.dirname(removed for heroku)
+#STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),'static_cdn','static_root')#os.path.dirname(removed for heroku)
+STATIC_ROOT=os.path.join(BASE_DIR,'static_root')
 MEDIA_URL='/media/'
-MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR),'static_cdn','media_root') #os.path.dirname (removed for heroku)
+#MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR),'static_cdn','media_root') #os.path.dirname (removed for heroku)
+MEDIA_ROOT=os.path.join(BASE_DIR,' media_root')
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
