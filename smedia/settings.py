@@ -12,9 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku 
-import dj_database_url
-from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,7 +25,7 @@ SECRET_KEY = 'django-insecure-j$gu(t*z^cix))cmbpj7*#x^^i1p4i1&^+@f0pltthv!wfz8ac
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -72,7 +69,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'smedia.urls'
@@ -163,7 +159,6 @@ STATIC_ROOT=os.path.join(BASE_DIR,'static_root')
 MEDIA_URL='/media/'
 #MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR),'static_cdn','media_root') #os.path.dirname (removed for heroku)
 MEDIA_ROOT=os.path.join(BASE_DIR,' media_root')
-STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
