@@ -1,1 +1,0 @@
-web: gunicorn smedia.wsgi --log-file -
